@@ -10,7 +10,7 @@ export default function Page() {
   const handleClick = async () => {
     setLoading(true);
     try {
-      const data = await runAi();
+      const data = await runAi("write a special 200 words motivational text");
       setResponse(data);
     } catch (err ) {
       console.error(err);
