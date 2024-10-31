@@ -4,6 +4,7 @@ import {runAi} from '@/actions/ai'
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import {Card, CardHeader, CardContent} from '@/components/ui/card';
+import ReactMarkdown from 'react-markdown';
 export default function Page() { 
   
   
@@ -35,9 +36,15 @@ export default function Page() {
       <Card className='mt-5'>
         <CardHeader>Ai Response</CardHeader>
         <CardContent>
-          {loading ? <div>loading...</div> : <div>{response}</div>}
+        {loading ? ( 
+          <div>loading...</div>
+        ) :(
+         
+        <ReactMarkdown>{response}</ReactMarkdown>
+        )}
         </CardContent>
       </Card>
     </div>
   );
+  
 }  
